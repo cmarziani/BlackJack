@@ -18,28 +18,66 @@ public class Joueur{
 		nbCartes++;
 	}
 	
-	public int calculPoints(){
+	public void scoreJoueur(){
+		int score1=calculPoints1();
+		int score11=calculPoints11();
+		if(score1==score11){
+			System.out.println("Le joueur a : "+score1+" points");
+		}
+		else
+			System.out.println("Le joueur a : "+score1+" ou "+score11+" points");
+	}
+	
+	public int calculPoints1(){
 		int score1=0;
-		int score11=0;
+		boolean stop=false;
 		
-		for(int i=0;i<nbCartes;i++){
+		for(int i=0;i<nbCartes && !stop;i++){
 			if(cartes[i]==1){
 				score1+=1;
-				score11+=11;
 			}
 			else if(cartes[i]>=10){
 				score1+=10;
-				score11+=10;
 			}
 			else{
 				score1 += cartes[i];
+			}
+			if(score1>21){
+				stop=true;
+			}
+			else if(score1==21){
+				stop=true;
+			}		
+		}
+		
+		return score1;
+	}
+
+public int calculPoints11(){
+		int score11=0;
+		boolean stop=false;
+		
+		for(int i=0;i<nbCartes && !stop;i++){
+			if(cartes[i]==1){
+				score11+=11;
+			}
+			else if(cartes[i]>=10){
+				score11+=10;
+			}
+			else{
 				score11 += cartes[i];
 			}
 			
+			if(score11>21){
+				stop=true;
+			}
+			else if(score11==21){
+				stop=true;
+			}
 		}
-		// Pour l'instant nous retournons seulement le score où l'as vaut 1 point
-		return score1;
+		return score11;
 	}
+
 	
 	public static void afficherCartes(){
 		System.out.println("Le joueur "+nom+" a :");

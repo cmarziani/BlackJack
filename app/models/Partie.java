@@ -7,11 +7,11 @@ public class Partie{
 		jeu.saisir();
 		int i = 0;
 		jeu.tab_Joueurs.get(i).piocherCarte(jeu.tirerCarte());
-		System.out.println(jeu.tab_Joueurs.get(i).nom+" a "+jeu.tab_Joueurs.get(i).calculPoints()+" points.");
+		jeu.tab_Joueurs.get(i).scoreJoueur();
 		jeu.tab_Joueurs.get(i).piocherCarte(jeu.tirerCarte());
-		System.out.println(jeu.tab_Joueurs.get(i).nom+" a "+jeu.tab_Joueurs.get(i).calculPoints()+" points.");
+		jeu.tab_Joueurs.get(i).scoreJoueur();
 		jeu.tab_Joueurs.get(i).piocherCarte(jeu.tirerCarte());
-		System.out.println(jeu.tab_Joueurs.get(i).nom+" a "+jeu.tab_Joueurs.get(i).calculPoints()+" points.");		
+		jeu.tab_Joueurs.get(i).scoreJoueur();
 		jeu.tab_Joueurs.get(i).afficherCartes();
 		
 		//}

@@ -42,10 +42,8 @@ public class Joueur{
 			else{
 				score1 += cartes[i];
 			}
-			if(score1>21){
-				stop=true;
-			}
-			else if(score1==21){
+			
+			if(score1==21){
 				stop=true;
 			}		
 		}
@@ -68,10 +66,7 @@ public int calculPoints11(){
 				score11 += cartes[i];
 			}
 			
-			if(score11>21){
-				stop=true;
-			}
-			else if(score11==21){
+			if(score11==21){
 				stop=true;
 			}
 		}

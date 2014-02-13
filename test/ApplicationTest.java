@@ -27,7 +27,7 @@ import static org.fest.assertions.Assertions.*;
 */
 public class ApplicationTest {
 
-    @Test
+   /* @Test
     public void simpleCheck() {
         int a = 1 + 1;
         assertThat(a).isEqualTo(2);
@@ -38,7 +38,21 @@ public class ApplicationTest {
         Content html = views.html.index.render("Your new application is ready.");
         assertThat(contentType(html)).isEqualTo("text/html");
         assertThat(contentAsString(html)).contains("Your new application is ready.");
-    }
+    }*/
 
-
+		@Test
+	public void simpleCheck(){
+		Jeu jeu = new Jeu();
+		for(int i=0; i<=100;i++){
+			carteValeur(jeu.tirerCarte());
+		}
+		
+	}
+	
+	boolean carteValeur(int carte){
+		if(carte>=1 && carte<=13){
+			return true;
+		}
+		else return false;
+	}
 }

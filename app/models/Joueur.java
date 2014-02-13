@@ -4,7 +4,13 @@ public class Joueur{
 	static int nbCartes;
 
 	public Joueur(){
-
+	
+	}
+	
+	public Joueur(String name){
+		
+		nbCartes=0;
+		nom=name;
 	}
 	
 	public static void piocherCarte(int carte){

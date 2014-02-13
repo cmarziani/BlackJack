@@ -18,6 +18,29 @@ public class Joueur{
 		nbCartes++;
 	}
 	
+	public int calculPoints(){
+		int score1=0;
+		int score11=0;
+		
+		for(int i=0;i<nbCartes;i++){
+			if(cartes[i]==1){
+				score1+=1;
+				score11+=11;
+			}
+			else if(cartes[i]>=10){
+				score1+=10;
+				score11+=10;
+			}
+			else{
+				score1 += cartes[i];
+				score11 += cartes[i];
+			}
+			
+		}
+		// Pour l'instant nous retournons seulement le score où l'as vaut 1 point
+		return score1;
+	}
+	
 	public static void afficherCartes(){
 		System.out.println("Le joueur "+nom+" a :");
 		for(int i=0; i<nbCartes; i++){

@@ -1,8 +1,8 @@
 public class Joueur{
 	static int[] cartes = new int[10];
-	static string nom;
-}
+	static String nom;
 
-public Joueur(){
+	public Joueur(){
 
+	}
 }

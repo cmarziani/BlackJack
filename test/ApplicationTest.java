@@ -40,8 +40,8 @@ public class ApplicationTest {
         assertThat(contentAsString(html)).contains("Your new application is ready.");
     }*/
 
-		@Test
-	public void simpleCheck(){
+	@Test
+	public void carteValueCheck(){
 		Jeu jeu = new Jeu();
 		for(int i=0; i<=100;i++){
 			carteValeur(jeu.tirerCarte());
@@ -54,5 +54,33 @@ public class ApplicationTest {
 			return true;
 		}
 		else return false;
+	}
+	
+	@Test
+	public void afficherCartesTest(){
+		Jeu jeu = new Jeu();
+		Joueur player = new Joueur();
+		String lesCartes="";
+		for(int i=1; i<=13; i++){
+			player.piocherCarte(i);
+		}	
+		for(int i=0; i<player.nbCartes; i++){
+			if(player.cartes[i]==1){
+				lesCartes+=("As ");
+			}
+			else if(player.cartes[i]<=10){
+				lesCartes+=(player.cartes[i]+" ");
+			}
+			else if(player.cartes[i]==11){
+				lesCartes+=("J ");
+			}
+			else if(player.cartes[i]==12){
+				lesCartes+=("Q ");
+			}
+			else if(player.cartes[i]==13){
+				lesCartes+=("K ");
+			}
+		}
+		assertThat(lesCartes).contains("As 2 3 4 5 6 7 8 9 10 J Q K ");
 	}
 }
